@@ -170,7 +170,7 @@ app.post("/video", async (req, res) => {
     res.json({status:400,message:"Something went wrong"})
 }
 });
-app.get("/get-video",async (req, res) => {
+app.get("/get-video",passport,async (req, res) => {
   try {
     const data = await videoData.find();
     if (data) {
